@@ -8,4 +8,6 @@ console.log("I am called");
 
 route.get('/',homecontroller.home);
 
+route.use('/user',require('./users'))
+
 module.exports= route;
