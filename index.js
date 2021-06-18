@@ -1,9 +1,16 @@
 const express= require('express')
 
+
 const app=express();
 const port =8000
 
 const expLayout=require('express-ejs-layouts')
+
+const cookieParser=require('cookie-parser')
+
+const db= require('./config/mongoose')
+app.use(express.urlencoded());
+app.use(cookieParser());
 app.use(express.static('./assets'))
 app.use(expLayout)
 app.set('layout extractStyles',true)
